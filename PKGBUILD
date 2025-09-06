@@ -8,7 +8,7 @@ url='https://github.com/eiraos/calamares-settings-eiraos'
 license=('GPL')
 depends=(calamares)
 source=("$url/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('7761beee9973338d163f837766e14543d5305e68b2502a404d9301be42598c8e')
+sha256sums=('cfcad7e62a0d5524e23871b58eea63d1dad213ccd27c16d7f12ac19100fab11b')
 
 package() {
   install -d "${pkgdir}/etc/calamares"
