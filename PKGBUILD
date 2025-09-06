@@ -11,15 +11,14 @@ source=("$url/releases/download/${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha256sums=('7761beee9973338d163f837766e14543d5305e68b2502a404d9301be42598c8e')
 
 package() {
-  rm -rf "${pkgdir}/usr/share/calamares"
-  
-  install -d "${pkgdir}/usr/share/calamares"
-  install -d "${pkgdir}/usr/share/calamares/eiraos"
-  install -d "${pkgdir}/usr/share/calamares/eiraos/branding"
-  install -d "${pkgdir}/usr/share/calamares/eiraos/qml"
+  install -d "${pkgdir}/etc/calamares"
+  install -d "${pkgdir}/etc/calamares/modules"
+  install -d "${pkgdir}/etc/calamares/qml/calamares"
+  install -d "${pkgdir}/etc/calamares/branding/eiraos"
 
-  cp -r branding/eiraos/* "${pkgdir}/usr/share/calamares/eiraos/branding/"
-  cp -r qml/calamares/* "${pkgdir}/usr/share/calamares/eiraos/qml"
+  cp -r branding/eiraos/* "${pkgdir}/etc/calamares/branding/eiraos/"
+  cp -r qml/calamares/* "${pkgdir}/etc/calamares/qml/"
+  cp -r modules/* "${pkgdir}/etc/calamares/modules/"
 
-  cp settings.conf "${pkgdir}/usr/share/calamares/"
+  cp settings.conf "${pkgdir}/etc/calamares/settings.conf"
 }
